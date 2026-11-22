@@ -1,5 +1,6 @@
 """Generate the Arabic and English static pages into dist."""
 from html import escape
+from os import environ
 from pathlib import Path
 from posixpath import relpath
 import re
@@ -7,6 +8,7 @@ import re
 from content import ADDITIONAL, EXPERIENCE, PAPER, PHASES, PROJECTS, RECOGNITION
 
 OUT = Path(__file__).resolve().parent / "dist"
+BASE_URL = environ.get("PORTFOLIO_BASE_URL", "").rstrip("/")
 LINKEDIN = "https://www.linkedin.com/in/khaditheeng/"
 GITHUB = "https://github.com/codeNinjaess"
 NAV = [
@@ -110,7 +112,6 @@ class Page:
         slug = project["slug"]
         flow = "".join(f'<li>{self.copy(item)}</li>' for item in project["flow"])
         motif = {
-            "tamakkan": '<div class="graph"><i></i><i></i><i></i><i></i><i></i><span></span><span></span><span></span><span></span><span></span></div>',
             "majarat-noor": '<div class="orbit"><i></i><i></i><i></i></div>',
             "luqata": '<div class="match"><i></i><i></i><i></i></div>'
         }[slug]
@@ -127,7 +128,7 @@ class Page:
 
     def work(self):
         cards = "".join(f"""
-<article class="project-card {"lead" if i == 0 else ""}">
+<article class="project-card">
   {self.diagram(project)}
   <div class="project-copy">
     <p class="eyebrow">{self.copy(project["type"])}</p>
@@ -137,13 +138,18 @@ class Page:
     {self.tags(project)}
     <a class="text-link" href="{self.project_url(project)}">{self.t("دراسة الحالة", "Read case study")}<span class="sr-only"> · {self.copy(project["name"])}</span></a>
   </div>
-</article>""" for i, project in enumerate(PROJECTS))
+</article>""" for project in PROJECTS)
         more = "".join(f'<li><h4>{self.copy(name)}</h4><p class="eyebrow">{self.copy(kind)}</p><p>{self.copy(summary)}</p></li>'
                        for name, kind, summary in ADDITIONAL)
         return f"""
 <section id="work" class="section wrap">
   <div class="section-title"><h2>{self.t("أعمال مختارة", "Selected work")}</h2></div>
-  <div class="projects">{cards}</div>
+  <div class="projects">
+    <article class="project-card locked">
+      <h3>{self.t("تمكّن", "Tamakkan")}</h3>
+      <p class="coming-soon"><span class="lock-icon" aria-hidden="true"></span>{self.t("قريبًا", "Coming soon")}</p>
+    </article>{cards}
+  </div>
   <div class="additional"><h3>{self.t("أعمال أخرى", "More work")}</h3><ul>{more}</ul></div>
 </section>"""
 
@@ -234,6 +240,7 @@ class Page:
             "Khadija Al-Ansari is a software engineer in Riyadh working across AI applications, software development, and user experience."
         ))[self.en]
         main = self.case_study() if self.project else self.hero() + self.work() + self.experience() + self.about()
+        social_image = f"{BASE_URL}/assets/social-preview.jpg" if BASE_URL else self.asset("social-preview.jpg")
         return f"""<!doctype html>
 <html lang="{self.language}" dir="{"ltr" if self.en else "rtl"}">
 <head>
@@ -244,7 +251,7 @@ class Page:
   <meta property="og:type" content="website">
   <meta property="og:title" content="{escape(title)}">
   <meta property="og:description" content="{escape(description)}">
-  <meta property="og:image" content="{self.asset("social-preview.jpg")}">
+  <meta property="og:image" content="{escape(social_image)}">
   <meta property="og:image:width" content="1000">
   <meta property="og:image:height" content="525">
   <meta name="twitter:card" content="summary_large_image">

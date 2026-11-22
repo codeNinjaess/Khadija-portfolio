@@ -85,7 +85,12 @@ html[lang="en"] :is(.section-title h2, .contact h2) { letter-spacing: -.065em; }
 .project-card { min-inline-size: 0; background: var(--paper); border: 1px solid var(--line); border-radius: .8rem; overflow: hidden; display: flex; flex-direction: column; }
 .project-copy { display: flex; flex-direction: column; align-items: flex-start; flex: 1; padding: clamp(1.25rem, 4vw, 2.6rem); }
 .project-copy h3 { font-size: clamp(2.05rem, 4.8vw, 3.1rem); margin-block: .25rem .4rem; }
-.lead h3 { font-size: clamp(2.55rem, 6.4vw, 5.15rem); }
+.project-card.locked { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .75rem 1rem; padding: 1rem clamp(1.25rem, 4vw, 2.6rem); background: var(--sand); }
+.locked h3 { font-size: clamp(1.5rem, 3.5vw, 2.25rem); }
+.coming-soon { display: inline-flex; align-items: center; gap: .55rem; border: 1px solid #b894a1; border-radius: 100vw; padding: .25rem .75rem; color: var(--wine); font-size: .875rem; font-weight: 700; }
+.lock-icon { position: relative; display: block; inline-size: .7rem; block-size: .54rem; margin-block-start: .23rem; border: 1.5px solid currentColor; border-radius: .12rem; }
+.lock-icon::before { content: ""; position: absolute; inline-size: .45rem; block-size: .37rem; inset-inline-start: 50%; inset-block-end: 100%; transform: translateX(-50%); border: 1.5px solid currentColor; border-block-end: 0; border-radius: 1rem 1rem 0 0; }
+[dir="rtl"] .lock-icon::before { transform: translateX(50%); }
 .project-tagline { font-weight: 750; }
 .project-copy p:not(.eyebrow, .project-tagline) { color: var(--muted); margin-block: .4rem .9rem; }
 .tags { display: flex; flex-wrap: wrap; gap: .35rem; list-style: none; margin: 0 0 1.4rem; padding: 0; }
@@ -94,7 +99,6 @@ html[lang="en"] :is(.section-title h2, .contact h2) { letter-spacing: -.065em; }
 .text-link:hover { color: #a1194d; text-decoration-thickness: 2px; }
 .project-copy .text-link { margin-block-start: auto; }
 .diagram { position: relative; display: grid; grid-template-rows: 1fr auto auto; align-content: end; min-inline-size: 0; min-block-size: 15rem; padding: clamp(.9rem, 2.5vw, 1.7rem); color: #fff0e3; background: #321020; overflow: hidden; isolation: isolate; }
-.diagram.tamakkan { background: radial-gradient(ellipse at 49% 37%, #5f1637, transparent 73%), #230812; min-block-size: 18rem; }
 .diagram.majarat-noor { background: radial-gradient(ellipse at 50% 44%, #422444, transparent 65%), #220f2a; }
 .diagram.luqata { color: #53162f; background: radial-gradient(ellipse at 50% 55%, #f8e7da, transparent 68%), #ebd4cb; }
 .diagram figcaption { font-size: .875rem; font-weight: 700; padding-block-end: .45rem; }
@@ -102,20 +106,6 @@ html[lang="en"] :is(.section-title h2, .contact h2) { letter-spacing: -.065em; }
 .diagram li { flex: 1 1 auto; max-inline-size: 100%; overflow-wrap: anywhere; font-size: .875rem; padding-block-start: .45rem; }
 .diagram li:not(:last-child)::after { content: "·"; display: inline-block; margin-inline-start: .6rem; opacity: .65; }
 .motif { display: grid; place-items: center; min-block-size: 9.5rem; position: relative; }
-.graph { position: relative; inline-size: min(100%, 24rem); aspect-ratio: 2.25; direction: ltr; color: #fb729e; }
-.graph i, .graph span { position: absolute; display: block; }
-.graph i { border-radius: 50%; width: .72rem; height: .72rem; z-index: 1; transform: translate(-50%, -50%); background: #ffd398; box-shadow: 0 0 .75rem #ff477d, 0 0 0 .34rem #ee527345; }
-.graph i:nth-child(1) { left: 10%; top: 66%; }
-.graph i:nth-child(2) { left: 30%; top: 30%; }
-.graph i:nth-child(3) { left: 50%; top: 55%; width: 1rem; height: 1rem; }
-.graph i:nth-child(4) { left: 70%; top: 19%; }
-.graph i:nth-child(5) { left: 88%; top: 63%; }
-.graph span { transform-origin: left center; height: 1px; background: currentColor; }
-.graph span:nth-of-type(1) { left: 10%; top: 66%; width: 26%; transform: rotate(-39deg); }
-.graph span:nth-of-type(2) { left: 30%; top: 30%; width: 23%; transform: rotate(29deg); }
-.graph span:nth-of-type(3) { left: 50%; top: 55%; width: 26%; transform: rotate(-39deg); }
-.graph span:nth-of-type(4) { left: 70%; top: 19%; width: 27%; transform: rotate(47deg); }
-.graph span:nth-of-type(5) { left: 50%; top: 55%; width: 38%; transform: rotate(5deg); opacity: .45; }
 .orbit { position: relative; width: min(75%, 15rem); aspect-ratio: 2.35; border: 1px solid #eea7c8a6; border-radius: 50%; transform: rotate(-16deg); }
 .orbit::before { content: ""; position: absolute; inset: 15% -17%; border: 1px solid #c394c96e; border-radius: 50%; }
 .orbit i { position: absolute; border-radius: 50%; aspect-ratio: 1; box-shadow: 0 0 1rem #f484af55; }
@@ -206,9 +196,6 @@ html[lang="en"] :is(.section-title h2, .contact h2) { letter-spacing: -.065em; }
   .hero h1 { font-size: clamp(2.25rem, 5.15vw, 5rem); }
   .hero-description { margin-block: .9rem 1.5rem; }
   .projects { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .project-card.lead { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); }
-  .lead .diagram { min-block-size: 22rem; }
-  .graph { inline-size: min(100%, 27rem); }
   .process { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .process-art { position: sticky; inset-block-start: 1.5rem; }
 }

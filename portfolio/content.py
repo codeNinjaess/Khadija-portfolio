@@ -1,23 +1,6 @@
 # Pairs are ordered Arabic, English.
 PROJECTS = [
     {
-        "slug": "tamakkan",
-        "name": ("تمكّن", "Tamakkan"),
-        "type": ("إثبات مفهوم · مختبر الذكاء الاصطناعي في نسيج", "Proof of concept · Naseej AI Lab"),
-        "tagline": ("من فجوة في التعلّم إلى خطوة واضحة", "From a learning gap to a clear next step"),
-        "summary": ("مرشد أكاديمي يربط أدلة التعلّم بمتطلبات المنهج، ويبيّن للطالب ما يحتاج إلى مراجعته ولماذا.", "A curriculum-aware academic advisor that connects learner evidence to course prerequisites and explains what to review and why."),
-        "tags": ["Knowledge graphs", "AI", "Bilingual UX"],
-        "flow": [("المنهج والأدلة", "Curriculum & evidence"), ("كشف الفجوات", "Detect gaps"), ("ترتيب الأولويات", "Prioritize impact"), ("التدريب", "Practice"), ("التحقّق", "Verify")],
-        "details": [
-            ("قد يلاحظ الطالب ضعفًا في مقرر سابق من دون أن يعرف أي مفهوم يحتاج إليه الآن، أو كيف يؤثر ذلك في المقررات اللاحقة.", "Students may know they struggled in a prior course but still be unsure which concept to revisit or how it affects later courses."),
-            ("طلاب الجامعة الذين يحتاجون إلى ترتيب مراجعتهم بناءً على متطلبات خطتهم الدراسية.", "University students deciding what to review in the context of their degree plan."),
-            ("إثبات مفهوم لمرشد الفجوات الأكاديمية المرتبط بالمنهج (CAAGA)، طُوّر خلال التدريب في مختبر الذكاء الاصطناعي في نسيج.", "A proof of concept for a Curriculum-Aware Academic Gap Advisor (CAAGA), developed during my internship at Naseej AI Lab."),
-            ("حدّدت المتطلبات وصمّمت الواجهة والمعمارية، وبنيت جزءًا من الرسم البياني المعرفي للمنهج ونموذج المتعلّم. طوّرت كشف الفجوات وترتيبها حسب أثرها الدراسي ومساري التدريب والتحقّق، وأعددت بنك أسئلة رياضيات ثنائي اللغة.", "I defined requirements, designed the interface and architecture, and built a slice of the curriculum knowledge graph and the learner model. I implemented gap detection, impact prioritization, practice and verification, and created a bilingual mathematics question bank."),
-            ("ربطت الفجوات بمفاهيم محددة من المقررات السابقة. يجمع المسار أدلة مثل السجل الدراسي ونتائج التقييم، ويقارنها بعلاقات المنهج، ثم يوضّح أثر كل فجوة في المقررات التالية ويوجّه الطالب إلى تدريب مرتبط بها وأسئلة للتحقّق بصورة مستقلة.", "I modeled prerequisites at the concept level so a recommendation could explain why a specific topic matters. The flow compares evidence such as transcripts and assessment answers against curriculum relationships, explains the downstream impact of each gap, then routes students to targeted practice and separate verification questions."),
-            ("راجعت إثبات المفهوم استعدادًا لاختبار الزملاء، وعرضته داخليًا. اختبرت إدخال سجل دراسي اصطناعي وملاءمة مواد التدريب للأسئلة، وأعددت حالات اختبار للمسار المعتاد والحالات الحدّية.", "I reviewed the proof of concept for a peer-testing release and presented it internally. I tested transcript input with synthetic data, checked that practice resources matched their questions, and wrote test suites for the normal flow and edge cases.")
-        ]
-    },
-    {
         "slug": "majarat-noor",
         "name": ("مجرة نور", "Majarat Noor"),
         "type": ("مشروع تخرّج جماعي · جامعة الملك سعود", "Team graduation project · King Saud University"),
@@ -63,15 +46,15 @@ ADDITIONAL = [
 ]
 
 PHASES = [
-    (("المتطلبات", "Requirements"), ("حدّدت نطاق تمكّن واحتياجاته وقصص المستخدم قبل تصميم الحل.", "I defined Tamakkan’s scope, requirements, and user stories before designing the solution.")),
+    (("المتطلبات", "Requirements"), ("في أريس، بحثت في تاريخ بئر عثمان وقارنت أدوات بناء المواقع وأعددت مسودة متطلبات لموقع رِواء عثمان.", "At Arees, I researched the history of Bir Othman, compared site-building tools, and drafted requirements for the Rawaa Othman website.")),
     (("التصميم", "Design"), ("في أريس، صمّمت صفحات رِواء عثمان على Figma وطوّرت نماذجها عبر أكثر من جولة.", "At Arees, I designed Rawaa Othman pages in Figma and iterated on the prototypes.")),
-    (("التطوير", "Development"), ("ربطت نموذج المتعلّم في تمكّن بالرسم البياني للمنهج لدعم كشف الفجوات.", "I connected Tamakkan’s learner model to the curriculum graph to support gap detection.")),
-    (("الاختبار", "Testing"), ("أعددت اختبارات لرحلة الطالب في تمكّن تغطّي المسار المعتاد والحالات الحدّية.", "I wrote tests for Tamakkan’s student journey covering the typical flow and edge cases.")),
+    (("التطوير", "Development"), ("في مجرة نور، بنى فريق التخرّج لعبة تعليمية باستخدام Unity وC# جمعت بين الاستكشاف والتحديات والتلميحات.", "For Majarat Noor, my graduation team used Unity and C# to build an educational game with exploration, challenges, and hints.")),
+    (("الاختبار", "Testing"), ("في نسيج، جرّبت إصدارات محدّثة من البرمجيات ضمن تقييمات المنتجات، ودوّنت ملاحظات للفريق.", "At Naseej, I tried updated software releases as part of product evaluations and documented feedback for the team.")),
 ]
 
 EXPERIENCE = [
     (("مختبر الذكاء الاصطناعي في نسيج", "Naseej AI Lab"), ("متدربة ذكاء اصطناعي", "AI Engineering Intern"), ("من سبتمبر ٢٠٢٦ · الرياض", "Since September 2026 · Riyadh"),
-     ("طوّرت إثبات مفهوم تمكّن، وساهمت في صياغة بحث عن التعرّف الضوئي متعدد اللغات وتحديثه بنتائج التجارب. قدّمت ورشتين عن الاستعانة بالنماذج اللغوية في كتابة الأبحاث وعن إعداد العروض التقديمية.", "I built the Tamakkan proof of concept, helped draft a multilingual OCR study and incorporated experimental results. I delivered workshops on using language models to support research writing and on preparing presentations.")),
+     ("ساهمت في صياغة بحث عن التعرّف الضوئي متعدد اللغات وتحديثه بنتائج التجارب، وشاركت في تقييم منتجات برمجية. قدّمت ورشتين عن الاستعانة بالنماذج اللغوية في كتابة الأبحاث وعن إعداد العروض التقديمية.", "I helped draft a multilingual OCR study and incorporated experimental results, and contributed to software product evaluations. I delivered workshops on using language models to support research writing and on preparing presentations.")),
     (("أريس", "Arees"), ("متدربة هندسة برمجيات", "Software Engineering Intern"), ("يونيو – أغسطس ٢٠٢٦ · المدينة المنورة", "June–August 2026 · Medina"),
      ("ساهمت في تصميم وتطوير موقع رِواء عثمان لمشروع بئر عثمان، باستخدام Figma للتصميم وWordPress للتطوير. قارنت أدوات البناء، وبحثت في تاريخ البئر، وأعددت مسودة متطلبات وواجهات لصفحات التاريخ والرؤية والرسالة وغيرها. درست أفكار المساعد الذكي والجولة بزاوية ٣٦٠° ضمن التصوّر الأولي.", "I helped design and develop the Rawaa Othman website for the Bir Othman project using Figma and WordPress. I compared site-building tools, researched the well’s history, drafted requirements, and designed pages including History and Vision & Mission. An AI assistant and a 360° tour were explored as concepts."))
 ]
