@@ -5,7 +5,8 @@ from pathlib import Path
 from posixpath import relpath
 import re
 
-from content import ADDITIONAL, EXPERIENCE, PAPER, PHASES, PROJECTS, RECOGNITION
+from content import EXPERIENCE, PAPER, PROJECTS, RECOGNITION
+from museum import render_museum
 
 OUT = Path(__file__).resolve().parent / "dist"
 BASE_URL = environ.get("PORTFOLIO_BASE_URL", "").rstrip("/")
@@ -87,27 +88,6 @@ class Page:
   <div class="wrap footer-line"><span>{self.t("خديجة الأنصاري", "Khadija Al-Ansari")}</span><span>{self.t("الرياض، السعودية", "Riyadh, Saudi Arabia")}</span></div>
 </footer>"""
 
-    def hero(self):
-        mobile = f'{self.asset("hero-mobile-560.webp")} 560w, {self.asset("hero-mobile-1122.webp")} 1122w'
-        desktop = f'{self.asset("hero-desktop-960.webp")} 960w, {self.asset("hero-desktop-1672.webp")} 1672w'
-        return f"""
-<section class="hero dark" aria-labelledby="hero-title">
-  <picture class="hero-art">
-    <source media="(max-width: 799px)" width="1122" height="1402" srcset="{mobile}" sizes="100vw">
-    <img src="{self.asset("hero-desktop-1672.webp")}" srcset="{desktop}" sizes="(min-width: 1500px) 1500px, 100vw"
-         width="1672" height="941" alt="" fetchpriority="high">
-  </picture>
-  <div class="wrap hero-inner">
-    <div class="hero-copy">
-      <p class="eyebrow location"><span aria-hidden="true"></span>{self.t("الرياض، السعودية", "Riyadh, Saudi Arabia")}</p>
-      <h1 id="hero-title">{self.t("خديجة الأنصاري", "Khadija Al‑Ansari")}</h1>
-      <p class="role">{self.t("مهندسة برمجيات | تطبيقات الذكاء الاصطناعي وتجربة المستخدم", "Software Engineer | AI Applications & User Experience")}</p>
-      <p class="hero-description">{self.t("أطوّر تطبيقات برمجية توظّف الذكاء الاصطناعي وتحول الأفكار إلى تجارب تفاعلية.", "I build software that puts AI to work and turns ideas into interactive experiences.")}</p>
-      <a class="button" href="#work">{self.t("مشاهدة المشاريع", "View projects")}</a>
-    </div>
-  </div>
-</section>"""
-
     def diagram(self, project):
         slug = project["slug"]
         flow = "".join(f'<li>{self.copy(item)}</li>' for item in project["flow"])
@@ -125,33 +105,6 @@ class Page:
     def tags(self, project):
         items = "".join(f'<li lang="en" dir="ltr">{escape(tag)}</li>' for tag in project["tags"])
         return f'<ul class="tags">{items}</ul>'
-
-    def work(self):
-        cards = "".join(f"""
-<article class="project-card">
-  {self.diagram(project)}
-  <div class="project-copy">
-    <p class="eyebrow">{self.copy(project["type"])}</p>
-    <h3>{self.copy(project["name"])}</h3>
-    <p class="project-tagline">{self.copy(project["tagline"])}</p>
-    <p>{self.copy(project["summary"])}</p>
-    {self.tags(project)}
-    <a class="text-link" href="{self.project_url(project)}">{self.t("دراسة الحالة", "Read case study")}<span class="sr-only"> · {self.copy(project["name"])}</span></a>
-  </div>
-</article>""" for project in PROJECTS)
-        more = "".join(f'<li><h4>{self.copy(name)}</h4><p class="eyebrow">{self.copy(kind)}</p><p>{self.copy(summary)}</p></li>'
-                       for name, kind, summary in ADDITIONAL)
-        return f"""
-<section id="work" class="section wrap">
-  <div class="section-title"><h2>{self.t("أعمال مختارة", "Selected work")}</h2></div>
-  <div class="projects">
-    <article class="project-card locked">
-      <h3>{self.t("تمكّن", "Tamakkan")}</h3>
-      <p class="coming-soon"><span class="lock-icon" aria-hidden="true"></span>{self.t("قريبًا", "Coming soon")}</p>
-    </article>{cards}
-  </div>
-  <div class="additional"><h3>{self.t("أعمال أخرى", "More work")}</h3><ul>{more}</ul></div>
-</section>"""
 
     def experience(self):
         jobs = "".join(f"""
@@ -174,38 +127,6 @@ class Page:
       <a class="text-link" href="https://arxiv.org/abs/2610.25235">{self.t("قراءة البحث على arXiv", "Read the preprint")}</a>
     </div>
     <div class="recognition"><h3>{self.t("التعليم والتكريم", "Education & recognition")}</h3><ul>{honors}</ul></div>
-  </div>
-</section>"""
-
-    def about(self):
-        phases = "".join(f"""
-<li class="phase" id="phase-{i + 1}">
-  <span class="phase-index" aria-hidden="true">{i + 1:02}</span>
-  <div><h3>{self.copy(title)}</h3><p>{self.copy(example)}</p></div>
-</li>""" for i, (title, example) in enumerate(PHASES))
-        nodes = "".join(f'<a href="#phase-{i + 1}" data-phase="{i}" aria-label="{self.copy(title) if self.en else escape(title[0])}">{i + 1:02}</a>'
-                        for i, (title, _) in enumerate(PHASES))
-        return f"""
-<section id="about" class="section wrap">
-  <div class="section-title"><h2>{self.t("كيف أعمل", "How I work")}</h2><p>{self.t("أربع مراحل من دورة حياة تطوير البرمجيات، مع مثال من عملي في كل مرحلة.", "Four phases of the software development lifecycle, each with an example from my work.")}</p></div>
-  <div class="process">
-    <div class="process-art dark">
-      <img src="{self.asset("hero-desktop-960.webp")}" width="960" height="540" loading="lazy" alt="">
-      <nav class="phase-map" aria-label="{self.t("خريطة مراحل التطوير", "Development phase map")}"><div class="map-plane">{nodes}</div></nav>
-    </div>
-    <ol class="phases">{phases}</ol>
-  </div>
-  <div class="about-grid">
-    <article><h3>{self.t("عنّي خارج التقنية", "Beyond tech")}</h3>
-      <p>{self.t("أحب الألعاب والتصميم ثلاثي الأبعاد والروبوتات. وفي أوقات الهدوء أقرأ الروايات، وأكتب القصص، وأستمتع بالإعراب.", "I enjoy games, 3D design, and robotics. In quieter moments I read novels, write stories, and enjoy working through Arabic grammar.")}</p>
-    </article>
-    <article><h3>{self.t("ما أتعلمه", "What I’m learning")}</h3>
-      <p>{self.t("أكملت دورات في مهارات الوكلاء وتصميم الأنظمة الوكيلة باستخدام LangChain وهندسة الأوامر.", "I completed courses in agent skills, agentic system design with LangChain, and prompt engineering.")}</p>
-      <p>{self.t("أستكشف التوليد المعزَّز بالاسترجاع (RAG) وبروتوكول سياق النموذج (MCP)، وأواصل برنامج الذكاء الاصطناعي في أكاديمية كاوست.", "I’m exploring retrieval-augmented generation (RAG) and the Model Context Protocol (MCP), and continuing KAUST Academy’s AI program.")}</p>
-    </article>
-    <article><h3>{self.t("أدوات أستخدمها", "Tools I use")}</h3>
-      <p>{self.t("أستخدم Figma للتصميم، وFlutter وUnity للتطوير، وPython وNeo4j لتطبيقات الذكاء الاصطناعي والبيانات.", "I use Figma for design, Flutter and Unity for development, and Python and Neo4j for AI and data work.")}</p>
-    </article>
   </div>
 </section>"""
 
@@ -239,7 +160,18 @@ class Page:
             "خديجة الأنصاري، مهندسة برمجيات في الرياض تعمل على تطبيقات الذكاء الاصطناعي وتطوير البرمجيات وتجربة المستخدم.",
             "Khadija Al-Ansari is a software engineer in Riyadh working across AI applications, software development, and user experience."
         ))[self.en]
-        main = self.case_study() if self.project else self.hero() + self.work() + self.experience() + self.about()
+        if self.project:
+            body = f'{self.header()}<main id="main" tabindex="-1">{self.case_study()}</main>{self.footer()}'
+            enhancements = f'<script defer src="{self.asset("site.js")}"></script>'
+        else:
+            body = render_museum(self, LINKEDIN, GITHUB)
+            enhancements = (
+                f'<link rel="stylesheet" href="{self.asset("museum.css")}">'
+                f'<link rel="stylesheet" href="{self.asset("project-gallery.css")}">'
+                f'<script defer src="{self.asset("museum.js")}"></script>'
+                f'<script defer src="{self.asset("project-exhibit.js")}"></script>'
+                f'<script defer src="{self.asset("museum-scene.js")}"></script>'
+            )
         social_image = f"{BASE_URL}/assets/social-preview.jpg" if BASE_URL else self.asset("social-preview.jpg")
         return f"""<!doctype html>
 <html lang="{self.language}" dir="{"ltr" if self.en else "rtl"}">
@@ -258,12 +190,10 @@ class Page:
   <title>{escape(title)}</title>
   <link rel="icon" href="{self.asset("logo-burgundy-300.webp")}" type="image/webp">
   <link rel="stylesheet" href="{self.asset("site.css")}">
-  <script defer src="{self.asset("site.js")}"></script>
+  {enhancements}
 </head>
 <body>
-{self.header()}
-<main id="main" tabindex="-1">{main}</main>
-{self.footer()}
+{body}
 </body>
 </html>
 """

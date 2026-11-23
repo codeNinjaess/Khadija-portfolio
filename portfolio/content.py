@@ -38,11 +38,14 @@ PROJECTS = [
 ]
 
 ADDITIONAL = [
-    (("تمسّك", "Tamassak"), ("لعبة جماعية · Unity وC#", "Team game · Unity and C#"), ("لعبة أركيد ثلاثية الأبعاد عن التوازن في مترو الرياض. أحرز الفريق المركز الثاني في معسكر AtharTech.", "A 3D arcade game about keeping your balance on the Riyadh Metro. The team placed second at the AtharTech bootcamp.")),
-    (("رحلتي", "Rehlati"), ("تصميم تجربة مستخدم جماعي · Figma", "Team UX project · Figma"), ("تصميم لتنسيق الرحلات المدرسية إلى إكسبو 2030، يشمل التصويت على الأجنحة والتواصل والتنبيه عند الابتعاد عن المجموعة.", "A school-trip design for Expo 2030 with pavilion voting, communication, and alerts when a student leaves the group.")),
-    (("UniBites", "UniBites"), ("مشروع جماعي · معمارية البرمجيات", "Team project · Software architecture"), ("تصميم لطلب الطعام داخل الحرم الجامعي واستلامه من خزائن ذكية تُخصَّص حسب الطلب.", "A design for ordering campus meals and collecting them from dynamically assigned smart lockers.")),
-    (("Movie Cave", "Movie Cave"), ("تطبيق ويب متكامل", "Full-stack web application"), ("تطبيق ويب يستخدم Angular وSpring Boot وواجهات REST.", "A web application using Angular, Spring Boot, and REST APIs.")),
-    (("Clothing Advice System", "Clothing Advice System"), ("نظام توصية · تعلّم آلي", "Recommender · Machine learning"), ("نظام توصية بالملابس باستخدام Python وscikit-learn ونماذج لغوية كبيرة.", "A clothing recommender using Python, scikit-learn, and large language models.")),
+    ("tamassak", ("تمسّك", "Tamassak"), ("لعبة جماعية · Unity وC#", "Team game · Unity and C#"), ("لعبة أركيد ثلاثية الأبعاد عن التوازن في مترو الرياض. أحرز الفريق المركز الثاني في معسكر AtharTech.", "A team arcade game about keeping your balance on the Riyadh Metro. The game placed second at the AtharTech bootcamp.")),
+    ("rehlati", ("رحلتي", "Rehlati"), ("تصميم تجربة مستخدم جماعي · Figma", "Team UX project · Figma"), ("تصميم لتنسيق الرحلات المدرسية إلى إكسبو 2030، يشمل التصويت على الأجنحة والتواصل والتنبيه عند الابتعاد عن المجموعة.", "A school-trip design for Expo 2030 with pavilion voting, communication, and alerts when a student strays from the group.")),
+    ("unibites", ("UniBites", "UniBites"), ("مشروع جماعي · معمارية البرمجيات", "Team project · Software architecture"), ("تصميم لطلب الطعام داخل الحرم الجامعي واستلامه من خزائن ذكية تُخصَّص حسب الطلب.", "A design for ordering campus meals and collecting them from dynamically assigned smart lockers.")),
+    ("movie-cave", ("Movie Cave", "Movie Cave"), ("تطبيق ويب متكامل", "Full-stack web application"), ("تطبيق ويب يستخدم Angular وSpring Boot وواجهات REST.", "A web application built with Angular, Spring Boot, and REST APIs.")),
+    ("clothing-advice", ("نظام اقتراح الملابس", "Clothing Advice System"), ("نظام توصية · تعلّم آلي", "Recommender · Machine learning"), ("نظام توصية بالملابس باستخدام Python وscikit-learn ونماذج لغوية كبيرة.", "A clothing recommender using Python, scikit-learn, and large language models.")),
+    ("robolux", ("RoboLux", "RoboLux"), ("فريق روبوتات · RoboRumble", "Robotics team · RoboRumble"), ("شاركت مع فريق روبولوكس في هاكاثون روبوتات قتالية. صمّمنا وجمّعنا وبرمجنا الروبوت باستخدام Arduino، وحقق الفريق المركز الثالث.", "Our team designed, assembled, and programmed an Arduino robot for RoboRumble. RoboLux took third place.")),
+    ("rawaa-othman", ("رِواء عثمان", "Rawaa Othman"), ("مشروع موقع · أريس", "Website project · Arees"), ("ساهمت في بحث المتطلبات وتصميم صفحات مشروع بئر عثمان على Figma، وفي تطوير الموقع باستخدام WordPress.", "I helped research requirements, design pages in Figma, and develop the Bir Othman project site in WordPress.")),
+    ("talaqa", ("طلاقة", "Talaqa"), ("النموذج الأولي · الإصدار الأول", "Prototype · Version 1"), ("بنيت نموذجًا أوليًا لألعاب تتيح التدرّب على الإلقاء والتحدث أمام الجمهور.", "I built a first prototype for practicing public speaking through games.")),
 ]
 
 PHASES = [

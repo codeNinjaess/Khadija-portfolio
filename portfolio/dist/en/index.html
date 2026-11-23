@@ -15,77 +15,295 @@
   <title>Khadija Al-Ansari</title>
   <link rel="icon" href="../assets/logo-burgundy-300.webp" type="image/webp">
   <link rel="stylesheet" href="../assets/site.css">
-  <script defer src="../assets/site.js"></script>
+  <link rel="stylesheet" href="../assets/museum.css"><link rel="stylesheet" href="../assets/project-gallery.css"><script defer src="../assets/museum.js"></script><script defer src="../assets/project-exhibit.js"></script><script defer src="../assets/museum-scene.js"></script>
 </head>
 <body>
 
 <a class="skip" href="#main">Skip to content</a>
-<header class="masthead dark">
-  <div class="wrap masthead-inner">
-    <a class="brand" href="index.html"><img src="../assets/logo-cream-300.webp" alt="Khadija Al-Ansari" width="300" height="111"></a>
-    <nav aria-label="Main navigation"><a href="index.html#work">Work</a><a href="index.html#experience">Experience</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a></nav>
-    <a class="language" data-language href="../index.html" lang="ar" hreflang="ar" dir="auto">العربية</a>
+<div class="museum" data-museum>
+  <header class="museum-header">
+    <a class="museum-brand" href="#lobby" data-route><img src="../assets/logo-cream-300.webp" alt="Khadija Al-Ansari" width="300" height="111"></a>
+    <div class="museum-header-actions">
+      <button class="museum-back" type="button" data-back hidden>Back</button>
+      <details class="museum-map">
+        <summary><span class="map-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Gallery map</summary>
+        <nav aria-label="Gallery map">
+          <a href="#lobby" data-route><strong>Entrance</strong></a><a href="#work" data-route><strong>Projects</strong><span>The work in context</span></a><a href="#about" data-route><strong>How I work</strong><span>From idea to test</span></a><a href="#knowledge" data-route><strong>Knowledge &amp; tools</strong><span>Skills in practice</span></a><a href="#experience" data-route><strong>Experience</strong><span>Research and practice</span></a><a href="#contact" data-route><strong>Contact</strong><span>Start a conversation</span></a>
+        </nav>
+      </details>
+      <a class="museum-language" data-language href="../index.html" lang="ar" hreflang="ar" dir="auto">العربية</a>
+    </div>
+  </header>
+  <main id="main" tabindex="-1" class="museum-main">
+    <div class="museum-visual" aria-hidden="true"><div class="museum-haze"></div><canvas class="museum-canvas"></canvas></div>
+    <section class="lobby" id="lobby" data-room="lobby" aria-labelledby="lobby-title">
+      <div class="lobby-copy">
+        <p class="museum-kicker"><span></span>Portfolio gallery · Riyadh</p>
+        <h1 id="lobby-title" class="museum-title" tabindex="-1">Khadija Al-Ansari</h1>
+        <p class="lobby-role">Software engineer · AI applications &amp; user experience</p>
+      </div>
+      <nav class="lobby-doors" aria-label="Gallery entrances"><a class="door door-work" href="#work" data-route><span class="door-light" aria-hidden="true"></span><strong>Projects</strong></a><a class="door door-about" href="#about" data-route><span class="door-light" aria-hidden="true"></span><strong>How I work</strong></a><a class="door door-knowledge" href="#knowledge" data-route><span class="door-light" aria-hidden="true"></span><strong>Knowledge &amp; tools</strong></a></nav>
+      <div class="lobby-footer">
+        <span>Choose an exhibit to explore</span>
+        <a href="#experience" data-route>Experience</a>
+        <a href="#contact" data-route>Contact</a>
+      </div>
+    </section>
+
+<section id="work" class="museum-room project-gallery" data-room="work" aria-labelledby="work-title">
+  <div class="project-heading">
+    <h2 id="work-title" class="museum-title projects-title" tabindex="-1">Projects</h2>
+    <nav class="project-wall-picker" aria-label="Museum walls"><a href="#work/devices" data-route>Device wall</a><a href="#work/galleries" data-route>Prototype wall</a><a href="#work/stands" data-route>Project stands</a></nav>
   </div>
-</header>
-<main id="main" tabindex="-1">
-<section class="hero dark" aria-labelledby="hero-title">
-  <picture class="hero-art">
-    <source media="(max-width: 799px)" width="1122" height="1402" srcset="../assets/hero-mobile-560.webp 560w, ../assets/hero-mobile-1122.webp 1122w" sizes="100vw">
-    <img src="../assets/hero-desktop-1672.webp" srcset="../assets/hero-desktop-960.webp 960w, ../assets/hero-desktop-1672.webp 1672w" sizes="(min-width: 1500px) 1500px, 100vw"
-         width="1672" height="941" alt="" fetchpriority="high">
-  </picture>
-  <div class="wrap hero-inner">
-    <div class="hero-copy">
-      <p class="eyebrow location"><span aria-hidden="true"></span>Riyadh, Saudi Arabia</p>
-      <h1 id="hero-title">Khadija Al‑Ansari</h1>
-      <p class="role">Software Engineer | AI Applications &amp; User Experience</p>
-      <p class="hero-description">I build software that puts AI to work and turns ideas into interactive experiences.</p>
-      <a class="button" href="#work">View projects</a>
+  <div class="project-showcase">
+<div class="project-overview" data-detail="devices" data-wall="devices" id="work/devices">
+  <nav class="project-wall" aria-label="Wall exhibits">
+<a class="project-plaque" href="#work/tamassak" data-route data-surface="data:image/webp;base64,UklGRnYWAABXRUJQVlA4IGoWAAAQdACdASoeAaEAPpE+mkkloyKhKPKs+LASCWMQzNtAa/fmKa+unsAkZ5F8vfx3Vr5fqX/uvpI9KG7z/RA6afGl5b+oPifY5WzO6H9p4xmL3tg1j10j7vs8QXlakzGUJltdFGw6NAb5xdpKG3FX61qos6xmy/RFitW0iSzVkBVyi2hByEMiIBDW4CzqXNt6f8eOuRkHHZH4eJqlPrkpFbcDajs8kDkVUfov5Wuq0F2jcJJQ7SzGrbxhcIY8b0i9vQyqf+fSizOh2i5KNEDolY9YnEj9OcnjcFe1t56uQiEUDrrhWUkfOGTw3i9lLOfug7GLtkqt2DlBLlcXDY/Fgn0ARLigR8vAcZ5T0OyOltVlg2TGAt8Cmm+IWLEJSNMae6cT7YXPa3uaT6B2FABOLRQZRvKftWt38yPbhe7YSZPTn4tCSEFly3iaeuAekL5bSNdkudF9xhmpT6jjTmmftkrxqUAw3j4muc3SgptWSq95N1/5T7mv7vx3EXcQCFTsDjpSTDp7HLfRI9eATKbWaxTCAWcjC2Ok8KgSyRCcjnwj+w1x7pOxE/MJNtGfDDMrJJZis/15/K76bxvlMuiHKNEtm1DjsC6+RWjrjOdzHlNWrf4dBzkSsUid7F7evZnH56M5hdnDlaD17/F+7rKJMBLKq/GtXgYZ245ez5KDfkPJ/Bgmzm2+t1z433PL0H/AU+A2NdphrflYcSH4XFd3t6pmspzqb6766FP8i9N3LU1KjifM+yXvWsBZaarLSORWDUcfl+AO7ZJN/roI/Jw06fFWbYj/Hx3H36bA88lUj9VPkHUBUU6T6yOCJ93m73sq7obrwuEQjp1oyIJb9C6zCH/sOuJYWicD9/yky3rQ3sFoNcyGJBGwJQFezHCHHHsHOvCdSl8yHdDP3Cq8mQ10D5aXxfIPVB6kh3cH2I8kAC6yT3oBaoZTFsc7+6xY6l0YEeKLKAWU3WNpS+2crpX5bOisq4oFVyM42nLp/AJMjcmYnUPvx2bDvj1SISdXEYtXwFoNdhcnCKE9KQnMxIZWFwA1wxnBfnyJb3pxYlAlEXx0jRhyXE0S7f8jT4ZOMx3/iqdcGLegTZ5vnAz2ji5YOnUB10PN17mLoQ283ANqshZXmqbThH3QVRRyetXthGjkq8UQ8P+mkoXRIfOZL7bYY0KQmn81ZwQafpHFAqGIm9KfFQzb0EwBpmQIiK18Es7FQWlLDdAWJmxwCSRd1B/uHOGzTT3vgATpkAcQAP7uDaw2zYT774312sovcAdF2M8S1SyNSekwNDzjLdsVgY3PCmQ3ZizDv2MpnlSPolgiz3/oRl41QmFANzWPBpLzsNYjWqeLhRuuc/4d4HULbJ93okfMEH+kwMmuAtXwxjjNgAXjQrjTWW2Sox/DrAN1pn/MlRMOA5mDmIGQqXUQGvmq37AKLeFm+dtHcIFHDRVqebRsXEak6NLOzrXbm/yM1z8G4jLDr5xx6aVTWQLg8t5rOSkqBxWH06JanOEnmhcay+O0rc6uprpKPxXmVHWKpgbl7ZRwNPvUhewozyMKU3dX0m1jVn07bdzD/9DZusInqo3eRkptOG7Y7w4zYYQpARGwyEXlGdfrLl+j4T1WvLGjrlqM4lScaB02q4vxDwUOoCr5yi0plYC3rGC02kBhlmPl1KsrCCbmjOy1wDBdcSEsnU+GpojDEAWUUR49jOAff2o46hHGX/SA8fWOih229ZQzm5vt5vExHdLCfvpwcCVg/dLF8JaMKJRZLp4E2q/lEz67SvEu/bbAaMXMB5Ab6/kxk2bEyQHVfJWU3nyOPmbaeqtADtVGy2HaI1zV2MUJBHJackQNr39rq2scIPiMGzA8ZWD9cuzf+vU/dcnNvfyG4ChoUqx04h1hJb0AKSNjsCyDBB/gJwe/PW8EHWFAmR1Llb+ulfmhaa4TRiiGVcGJUP/FkA1741DSCRsv2DXyyvvOhG3d7YvvIrlyYI7N5iCF5LV5yaPLPd+NxY8yUlQs48/J73Nt1+hsp1+K6DtBb17TyXZHuynuMhQCbBE9sblpMFOeQPaZ2xyooysAg5Yx9fnjb9jY5FDXhbW8S+KJuTqLJY46/z4hFzRt8hdGS9oShCD2txxJSyBuK3ozhAAt/yIL8IZaZGqSDC2s7Byy3dNaxVAiBnDpX/9KGLdXspnmK21Nd9Zuxaof8eHn68BsPDLwVmcWbN4QZq97P1oPbd1SbMj/3s+LGs2kYDiab8xmTb8ACi+uM8qstIAOQqeiukGzCFaJ8ebftPgi1S0rVOPZkOUhc4BOHTW0zzl4bmNI1JsQH0bDFwi4h6iEpHI2qbqiKeUAhnMWYaYKQGmzDo3myOjGzpGBWvq3l+siracuHsleeKIgOPHFYpie2pmt+b9USs9QW68ynCVsc9hD69WvWOFNb7EXyxPR8J0E9n9Us1X3kAuSdLXeMfmjfb3/gieZdSBkaYKBmQhvQQPyc6xdKEGz7gWymQmWBgTFkwOCwrTu21UWQ008n4o4hRpcAPuz5ktFM8ga/6y1jlyHWhV8Asox3RDGMw3EQ1GrWfkCiBFtkzCwuw/S/CBYckSqVm21ZH+CK2r6HWfvY74N3r3liwSRm16JXh+yrOTmTXcPQ36nsBc9mdnvKI2WV6ex/g2pOl6KSY2U5tvtdxj8nikx/ZoBwwA0vRnnJIA+H2n0mfP79VYdqASmPPbaq06YHri2pueTdUyW4BbXormrUJhUc741gvIypKHXwHNogXG+Pd+KBnZY0tsgR3hlzDPCgrN9nJFq9XK8DvybeSP7YLUZd4DZ0Rb9CPILFTCxQlO4ESOX0+hRuXBLC20r+ypE4qYZQjifqzGp2368Z46YjZFjk/iqlo4M/NB6ovvpZWMsrDyTzYmMv7xHDxQytHNtk847Lc8QLcGlF6i5wfY2hK9HwO3PR9pbpgvlmG7u3jEPfSVWeF0R9pixNe8yNDkV34jupfRSLttDS7iCONwdTvTjLynqKm2Ud/FsRoWLk/zJlJuc/X77Z5JAZnukdwCYlNGkvmNY95BaEeyDcF06qqF5RthY96Vg9X677MlX2kInEx+6/kjeM9bMw8YppQ9g9dsej6XI3F16gZ8R/oSzAPWtHU0RzugvBRSWiiQ9hHW+Pv+QBgw6WwAUTsJ2rQ+uqvKlYvAm0FIXoA1HuWAHqcTt97mr4TGq3U+PU8lU3KA8DzrDTsr6Ae/z6OdXxG/n/nlFyKVmucIf+2EMUku+radB/fIjs3MRTJxTuPS63nLDp6GyB9lXs4zQ2R5pn6thBvIgvXiOlG3riF8vtkiUIGmE5hxSF13vhnf6Beuwo4nG+XLBNWvMHEydZQbdPydhf+sgEtKNpmHVlgNHr1aTucrPGZhrCwiQhdzFk01855o1zXP6ZLYBLDrVAFQhyLofVLNzcCdgDPxzM+Nv2upO/VuQ7y4GEE7AkDLQJyF1GkY6CsMzL55QIjgz2XG3SYgYa5g+9ydfr1lHpAW2zpF2KDgqnKlSMJtOCUoBFXw9nqHLl2njfhBtLmoWHvQtSsW+ZIDB1RAR0AG8zHyrUSjxIepKsHQkQaBzm2P1Zu5+SLNElWputr57+Vp2v8n+mGHy+Ux6kBq4gGJVBFBeyOyxXi1EIOLOw6FLyrxL8BOEMRl5uc5SWT2NNoo8vJDV8o8bEjbgQNpAG7Cc1Tj7/JgqVCjVgnv8F+H90aXhKymx8ZHTg2I6akvpvFf0NrLFQOr9qHEJ7KmQ+L6ehrs41Q8SuGJeDwwvEg1CTjz0YUmWz68RSddv6TF0QUvQ66Vh5dLCCc9gnFKb08N8hcCBXA8P1cwwTypcpwxgzDGxrKMidPh9uyrJiLQB1Q44X2qD5RQhXBcMEsgWgc1Ud/Fr/9LtlwdCs7if3nFynISsxgPcUHVrB39f8lJ3Q4fABbCZnjfhzLVD6uGSTuY1sn6ZCBSBqpbUzn8JQ4YnguZepR6pYU43jbi6pxfGWPhuavluQ56bVTrBg2MMyeV2RYHAQXc9p6KPSPlKQCCrE1e+jwrciBzarltCj+1VUWj6XxoMMqeVzlSJScLBW4ZfEaefZXmKBHDiNJqW785bkufzMvdHaQiagLWIxYq65he0xajnpZh4LAW4d6z+GRAcNCCDCJi2hZHmRrStnf0hH8o9NQ0cE9bJ5kcMh6PtMsIfDWt5xQVCDOp7kWFvKjyu28vSeCg7lSvOhFZOgazOQBvTOU/yt063sxaGnMWUUXA2L6VtjdGjmnOsmoFYkjkWUpKgrPxctIaFhzQHRZ4jiQQUKJgxCBNyRS2cM492qnUj1WfaCeJKfA4eSOGEQ1/aVpReHxs4NUxHNt0v5Bhd0dd7ucwfTo4EQj7x3BAylX/mT1ShD2ZgPDJFesPf5EmYuk1uGsPPJHl6zYHxouaVeZGJEv6xPe3D4V6NlkBBaJss/bb4fzWqKIYcBzpYd9jN7cWBG+mHgLn09GGVkvk28sdvGajb5l5QB2GQ7qcawibUk7D9961ZScavRiQScgiTv9BfA1/w0DX3x7dI/l6IAwZoQFq4+ir4y3h+5ke/cqJIEIxYisobARITj6LBoG+9piatW06VQNsMidMUMcDZrEhhSwyJTy8iRGnm5T1zGovtuRyJTGhqyH9qogzibRZm8G8Vm0JHhnfeGIBxYcbHOzvCbwS56+H6wsEfr8F1btWi7COdoYNMdvyW170RUOSuvVzwGrOvwiFttKg0hptK5U6HVrRID7N6CqoMk4K+2D8lHe2N+eWGIUsdNyszFWq03E1fg7485pQb11h3vzRdf5ZDor2VJLKCARH1qqA6AYnoHkM7s2VHCGqEZs0UGM84ZOiSznJSK7L0QXZ3cnSQMv9zc6kOXw3QH5E1CVedjHxO/AjyxWSmCcwjHWCzHdw+2C2vM+hP8ZbMuvFXh5CZPJFO2ZjyAW/qozfuipthZEarDvKP3d6djspJTeVTwgPvCgX//Y6RZTbibDjOl7RzJyQP27O1/PQs/VXssc2t4S+pA6NJkLAURp8HdcfndsOWMKRk+kYopys6FLtues8F6QJDhEdD+YuIse01Ai5eTRKpPhjlguswL2zqgpefdU3QHR/Jd/F3AZqB51HOdO9dQUQtNxbRBm7lem1b38qEwuctvsU4OTA8EuIMVO1yIELraStt5/DTyVOmnYCvrrY/cR1ONZlYmlQKcGfzc6CpprvWXpE+6hkR3kuSim1I2wZQ3XkxEHZpvVRSVpoqh6Q9UjAdgPmt61dk98VQmDiNuQHORuRwuLbftWFM78Xr3qqf1Jzku+kGY3QpzuyUlW4Zm6m3iz968tN20lXpGizDwJKYkJ1fcIbIFKNpNWz5Rlb/BILN0LRLy1G3l8GWT3tmNMN79WGcSYJrG+cs1to3Bd5yIPO2w6yTG/SD08UnYA5DY52LaTKUBvh10iJitkNbYXyIK5kfLpL3VJCfv3919rqGrkdvQ993wW2cDC2zWtlaJ7hpnMzUtl6ZFCH9QXGvhvM5zdHgPcjSUGZxGF0J4f8WrcpgmIDSDwAtTM4mX13Uj7fXOFel8sfp7H+tZqUXuPZgj2x7dBpKZzzY3Bmb5l1T19orKI72h69UHS4lfQW7OlrXIlFpkrwKfO12n2luB9g1AuSLqaVyRXlBnZhRyDSaMCxt5ZpeWK1HR7Gt2A93yLFieQReRZxkLt10xP4xkWKQdBwXlNJCy5jELjjSoL52j2nBZ71vI3K9gPJW7ig5SFi8n+KCV9Y4F/odCFshtQT5ybKYuzoihngaHJWQEqVPbpbZj+MV6H38nFPnUQTcqbNcyZJmofFjcGTDKVvZM5HPRqpP6XNzztlxDJx8wQNDvko3UGbEkKYh292AspN1vAz0KjEs2jj2XUTog7U7HOV6O6jmqM3qC8i8PN+8hbfdaoLV2Kv+qV1MeOiNRQUH0MepHEKLYqtLk5YRfERdY5QW3X3X3EL1hQHxdoCBmIZqnNTTxCL3/uKx6y8pmvzcq10+IwA1i7V/f8EB+WQQG2D0GsOyNu/1jTk31Dx5jguFjDWb4B4HCK+fcYq5dOfhjcC30DHFBFXHVBkoPiN+XmqT1Vc3ablf6KHIsH4PrD494fIN5SSq/VfeDOsEghgNeg6Ba8n3AMMnUkGclHxUJcHW5iXNPpKPabYtI7iuzhIkP6f1d28D/Mcvl9ccqGdl/Z8DUkY1jQ4pynF5Puve8nlDQKv92NcQmjls4Zj3wdD8SbN1Gt2A+TmHJMJDrdUTQf3mWd9W/HIsri+dv4zZTfJgYhtf8xdJkLv6c3Xep0yUhkg40OvbSeBJLAZX2Easp+eSXesga9GyL8GIIhODZtcfAah+Gs5DjdtCc+v9VN+/dx1sOzqAoiGYVGwSa+db0iH893AUlVZUYvaoC0CZQ4kY6DkkphYoNuDsV3ZqiiOhPPNlLD7AyDZj3Lq6DyfD/Kf+y9uOZ1KSpri1OmP2pculHBYnR03pYTCCkpJYCLfwG66+zIFhRR34mJck8M478+ttLbhnCL4/KA8Mtzo0ESe4XSN7Ag5l7vACdkBwylhpdI+X3yAh5xg6JOcLKIi6f6AY111wvJzjrBTyJfAaHs8SflHWb0Yrjcr+uIB5wKMmtu21i+l92Dm1up1ChgUUtqCIsc/V1VpARz/0HkzPY2eZMA4rapfZLKPM9zgn6Ob1PHweSdSxHUOb/ZvbAl0g6A112xy44lGkLaqTHWzNbRAyWWFzAsZz7DJuZJpAeGbueT7M3nYKHfU4S6p402uJKim3Lyl1GNdB0Pfv7qyEVhD5A1tvd8KDtppSox+O9c3SECBlVShnjqWaFEvPbx0pTP8Gu0wDbEouUuqOX6JpO5gS3WSv1qTfN+JFnYYs3Uqx+gYlPCHMC2W2Vm1kwSq/rqapp6fi0LADvR5Qxo0E9t0nsX30ZP721PQZrRwAwB1ZpIwc/XswZ5OCxxjrnlMBgEqf2vU8/PHJXtMOaRUX4Tygza0sdQV9u7nbNN6rHah9mqZ8gVWECeiv1CAljs1HejIeqALGRHpqlrLa4ESU2fQj/CYbeJU8ZNvG/8O253I4y/1l0d7KE9RUsHrRKfjhnLXibM84448Bk4WMXFqRI5KDx7l/xrvryr528SzR0WhGSlfRCKwWnAq0+I2wYWzbK/+7FaErbgjEsxIcOsdYiFzItfj2S+GvCrfJaNHvkUTxLqww4fdmhrP/f429yAOJneXMAGwNWz6zMwl0lvbxw6S1DjYTfOFwdnazE6Es4CDf4m8JxO1myfzbQPKI9WvgHVWwQmW/ZzbQZzJNXFV1Hn0KZse/ivjuSQhaYfd5uN6U9AcK5rUqttQK5JLfvVHLigDgrEexHs8BvSP5aynz5kZEuQLtw3JhAosV+vhybT2wDcZV84X73sqZNZB8HdZLm/qqsmULFbAWyKbXe1cRScyYoHNl++5nc9QFGoJpq7JgCAW+SCO493yZWlDcfrrTGUL6flZItTayfH9mg7nm0vIE+zYKASaRpBgvAMOnnAd/5vNroWjG2/k+AQNVrwdEBH+xWmzj5JalLmnloQpq4BeAkp085CZwQG+gqT5lv13JItcnLyyywc/sfRnmoUvuCRiNr/ptKlcbiimrweYgBoYHOEVSuR/bYS4+o4qw66qkleYeOH85gB21dCyuAUdNP3OAAA=="><img src="../assets/projects/tamassak/thumb.webp" alt="" loading="lazy" decoding="async"><strong>Tamassak</strong></a>
+<a class="project-plaque" href="#work/luqata" data-route data-surface="data:image/webp;base64,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"><img src="../assets/projects/luqata/thumb.webp" alt="" loading="lazy" decoding="async"><strong>Luqata</strong></a>
+<a class="project-plaque" href="#work/majarat-noor" data-route data-surface="data:image/webp;base64,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"><img src="../assets/projects/majarat-noor/thumb.webp" alt="" loading="lazy" decoding="async"><strong>Majarat Noor</strong></a>
+<div class="project-plaque exhibit-locked">
+  <strong>Tamakkan</strong><small><i class="lock-icon" aria-hidden="true"></i>Coming soon</small>
+</div>
+  </nav>
+</div>
+<article class="project-focus" data-detail="tamassak" data-wall="devices" data-exhibit id="work/tamassak" aria-labelledby="focus-tamassak">
+  <div class="project-caption">
+    <p class="project-kind">Team game · Unity and C#</p>
+    <h3 id="focus-tamassak" tabindex="-1">Tamassak</h3>
+    <p class="project-summary">A team arcade game about keeping your balance on the Riyadh Metro. The game placed second at the AtharTech bootcamp.</p>
+    <a class="project-case-link exhibit-wall-back" href="#work/devices" data-route>Back to wall</a>
+  </div>
+<div class="device-viewer device-desktop" data-device>
+  <div class="device-chassis">
+    <div class="device-screen">
+<section class="screen-resource" data-resource="gameplay" aria-label="Gameplay footage">
+  <div class="screen-content"><video controls playsinline preload="none" poster="../assets/projects/tamassak/gameplay-poster.webp" src="../assets/projects/tamassak/gameplay.mp4" aria-label="Gameplay footage"></video></div>
+</section>
     </div>
   </div>
+</div>
+</article>
+<article class="project-focus" data-detail="luqata" data-wall="devices" data-exhibit id="work/luqata" aria-labelledby="focus-luqata">
+  <div class="project-caption">
+    <p class="project-kind">Team mobile project · King Saud University</p>
+    <h3 id="focus-luqata" tabindex="-1">Luqata</h3>
+    <p class="project-summary">A mobile app that connects lost and found reports, using image recognition to suggest possible matches.</p>
+    <a class="project-case-link exhibit-wall-back" href="#work/devices" data-route>Back to wall</a> <a class="project-case-link" href="work/luqata/index.html">Read case study</a>
+  </div>
+<div class="device-viewer device-phone" data-device>
+  <div class="device-chassis">
+    <div class="device-screen">
+<section class="screen-resource" data-resource="screens" aria-label="App screenshots">
+  <div class="screen-content">
+<div class="resource-carousel" data-carousel>
+  <div class="resource-slides"><figure data-slide><img src="../assets/projects/luqata/screen-01.webp" alt="App screenshots 1" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-02.webp" alt="App screenshots 2" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-03.webp" alt="App screenshots 3" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-04.webp" alt="App screenshots 4" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-05.webp" alt="App screenshots 5" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-06.webp" alt="App screenshots 6" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-07.webp" alt="App screenshots 7" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-08.webp" alt="App screenshots 8" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-09.webp" alt="App screenshots 9" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-10.webp" alt="App screenshots 10" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-11.webp" alt="App screenshots 11" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-12.webp" alt="App screenshots 12" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-13.webp" alt="App screenshots 13" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-14.webp" alt="App screenshots 14" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-15.webp" alt="App screenshots 15" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-16.webp" alt="App screenshots 16" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-17.webp" alt="App screenshots 17" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-18.webp" alt="App screenshots 18" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-19.webp" alt="App screenshots 19" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-20.webp" alt="App screenshots 20" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-21.webp" alt="App screenshots 21" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-22.webp" alt="App screenshots 22" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-23.webp" alt="App screenshots 23" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-24.webp" alt="App screenshots 24" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-25.webp" alt="App screenshots 25" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-26.webp" alt="App screenshots 26" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-27.webp" alt="App screenshots 27" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-28.webp" alt="App screenshots 28" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-29.webp" alt="App screenshots 29" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-30.webp" alt="App screenshots 30" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-31.webp" alt="App screenshots 31" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-32.webp" alt="App screenshots 32" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-33.webp" alt="App screenshots 33" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-34.webp" alt="App screenshots 34" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-35.webp" alt="App screenshots 35" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/luqata/screen-36.webp" alt="App screenshots 36" loading="lazy" decoding="async"></figure></div>
+  <div class="resource-arrows">
+    <button type="button" data-slide-step="-1" aria-label="Previous image"><span aria-hidden="true">←</span></button>
+    <span data-slide-count aria-live="polite" dir="ltr">1 / 36</span>
+    <button type="button" data-slide-step="1" aria-label="Next image"><span aria-hidden="true">→</span></button>
+  </div>
+</div></div>
 </section>
-<section id="work" class="section wrap">
-  <div class="section-title"><h2>Selected work</h2></div>
-  <div class="projects">
-    <article class="project-card locked">
-      <h3>Tamakkan</h3>
-      <p class="coming-soon"><span class="lock-icon" aria-hidden="true"></span>Coming soon</p>
-    </article>
-<article class="project-card">
-  
-<figure class="diagram majarat-noor">
-  <div class="motif" aria-hidden="true"><div class="orbit"><i></i><i></i><i></i></div></div>
-  <figcaption>Concept diagram</figcaption>
-  <ol><li>Explore</li><li>Challenge &amp; reward</li><li>On-demand hint</li></ol>
-</figure>
-  <div class="project-copy">
-    <p class="eyebrow">Team graduation project · King Saud University</p>
-    <h3>Majarat Noor</h3>
-    <p class="project-tagline">A space adventure through the school curriculum</p>
-    <p>An elementary-school game that turns subjects into planets, with challenges, rewards and AI hints shaped by each player’s performance.</p>
-    <ul class="tags"><li lang="en" dir="ltr">Unity</li><li lang="en" dir="ltr">C#</li><li lang="en" dir="ltr">AI hints</li></ul>
-    <a class="text-link" href="work/majarat-noor/index.html">Read case study<span class="sr-only"> · Majarat Noor</span></a>
+    </div>
+  </div>
+</div>
+</article>
+<article class="project-focus" data-detail="majarat-noor" data-wall="devices" data-exhibit id="work/majarat-noor" aria-labelledby="focus-majarat-noor">
+  <div class="project-caption">
+    <p class="project-kind">Team graduation project · King Saud University</p>
+    <h3 id="focus-majarat-noor" tabindex="-1">Majarat Noor</h3>
+    <p class="project-summary">An elementary-school game that turns subjects into planets, with challenges, rewards and AI hints shaped by each player’s performance.</p>
+    <a class="project-case-link exhibit-wall-back" href="#work/devices" data-route>Back to wall</a> <a class="project-case-link" href="work/majarat-noor/index.html">Read case study</a>
+  </div>
+<div class="device-viewer device-tablet" data-device>
+  <div class="device-chassis">
+    <div class="device-screen"><div class="screen-menu" data-resource-menu><button type="button" data-open-resource="part-1">Video · Part one</button><button type="button" data-open-resource="part-2">Video · Part two</button></div>
+<section class="screen-resource" data-resource="part-1" aria-label="Video · Part one">
+  <button class="screen-back" type="button" data-resource-back>Back to resources</button>
+  <div class="screen-content"><video controls playsinline preload="none" poster="../assets/projects/majarat-noor/part-1-poster.webp" src="../assets/projects/majarat-noor/part-1.mp4" aria-label="Video · Part one"></video></div>
+</section>
+<section class="screen-resource" data-resource="part-2" aria-label="Video · Part two">
+  <button class="screen-back" type="button" data-resource-back>Back to resources</button>
+  <div class="screen-content"><video controls playsinline preload="none" poster="../assets/projects/majarat-noor/part-2-poster.webp" src="../assets/projects/majarat-noor/part-2.mp4" aria-label="Video · Part two"></video></div>
+</section>
+    </div>
+  </div>
+</div>
+</article>
+<div class="project-overview" data-detail="galleries" data-wall="galleries" id="work/galleries">
+  <nav class="project-wall" aria-label="Wall exhibits">
+<a class="project-plaque" href="#work/rehlati" data-route data-surface="data:image/webp;base64,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"><img src="../assets/projects/rehlati/thumb.webp" alt="" loading="lazy" decoding="async"><strong>Rehlati</strong></a>
+<a class="project-plaque" href="#work/unibites" data-route data-surface="data:image/webp;base64,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"><img src="../assets/projects/unibites/thumb.webp" alt="" loading="lazy" decoding="async"><strong>UniBites</strong></a>
+  </nav>
+</div>
+<article class="project-focus" data-detail="rehlati" data-wall="galleries" data-exhibit id="work/rehlati" aria-labelledby="focus-rehlati">
+  <div class="project-caption">
+    <p class="project-kind">Team UX project · Figma</p>
+    <h3 id="focus-rehlati" tabindex="-1">Rehlati</h3>
+    <p class="project-summary">A school-trip design for Expo 2030 with pavilion voting, communication, and alerts when a student strays from the group.</p>
+    <a class="project-case-link exhibit-wall-back" href="#work/galleries" data-route>Back to wall</a>
+  </div>
+<div class="device-viewer device-board" data-device>
+  <div class="device-chassis">
+    <div class="device-screen"><div class="screen-menu" data-resource-menu><button type="button" data-open-resource="walkthrough">Digital prototype walkthrough</button><button type="button" data-open-resource="handmade">Handmade prototype photos</button></div>
+<section class="screen-resource" data-resource="walkthrough" aria-label="Digital prototype walkthrough">
+  <button class="screen-back" type="button" data-resource-back>Back to resources</button>
+  <div class="screen-content"><video controls playsinline preload="none" poster="../assets/projects/rehlati/walkthrough-poster.webp" src="../assets/projects/rehlati/walkthrough.mp4" aria-label="Digital prototype walkthrough"></video></div>
+</section>
+<section class="screen-resource" data-resource="handmade" aria-label="Handmade prototype photos">
+  <button class="screen-back" type="button" data-resource-back>Back to resources</button>
+  <div class="screen-content">
+<div class="resource-carousel" data-carousel>
+  <div class="resource-slides"><figure data-slide><img src="../assets/projects/rehlati/handmade-01.webp" alt="Handmade prototype photos 1" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/rehlati/handmade-02.webp" alt="Handmade prototype photos 2" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/rehlati/handmade-03.webp" alt="Handmade prototype photos 3" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/rehlati/handmade-04.webp" alt="Handmade prototype photos 4" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/rehlati/handmade-05.webp" alt="Handmade prototype photos 5" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/rehlati/handmade-06.webp" alt="Handmade prototype photos 6" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/rehlati/handmade-07.webp" alt="Handmade prototype photos 7" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/rehlati/handmade-08.webp" alt="Handmade prototype photos 8" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/rehlati/handmade-09.webp" alt="Handmade prototype photos 9" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/rehlati/handmade-10.webp" alt="Handmade prototype photos 10" loading="lazy" decoding="async"></figure><figure data-slide><img src="../assets/projects/rehlati/handmade-11.webp" alt="Handmade prototype photos 11" loading="lazy" decoding="async"></figure></div>
+  <div class="resource-arrows">
+    <button type="button" data-slide-step="-1" aria-label="Previous image"><span aria-hidden="true">←</span></button>
+    <span data-slide-count aria-live="polite" dir="ltr">1 / 11</span>
+    <button type="button" data-slide-step="1" aria-label="Next image"><span aria-hidden="true">→</span></button>
+  </div>
+</div></div>
+</section>
+    </div>
+  </div>
+</div>
+</article>
+<article class="project-focus" data-detail="unibites" data-wall="galleries" data-exhibit id="work/unibites" aria-labelledby="focus-unibites">
+  <div class="project-caption">
+    <p class="project-kind">Team project · Software architecture</p>
+    <h3 id="focus-unibites" tabindex="-1">UniBites</h3>
+    <p class="project-summary">A design for ordering campus meals and collecting them from dynamically assigned smart lockers.</p>
+    <a class="project-case-link exhibit-wall-back" href="#work/galleries" data-route>Back to wall</a>
+  </div>
+<div class="device-viewer device-board" data-device>
+  <div class="device-chassis">
+    <div class="device-screen"><div class="screen-menu" data-resource-menu><button type="button" data-open-resource="cover">Project image</button><button type="button" data-open-resource="trailer">Trailer</button></div>
+<section class="screen-resource" data-resource="cover" aria-label="Project image">
+  <button class="screen-back" type="button" data-resource-back>Back to resources</button>
+  <div class="screen-content"><div class="resource-slides"><figure data-slide><img src="../assets/projects/unibites/cover.webp" alt="Project image 1" loading="lazy" decoding="async"></figure></div></div>
+</section>
+<section class="screen-resource" data-resource="trailer" aria-label="Trailer">
+  <button class="screen-back" type="button" data-resource-back>Back to resources</button>
+  <div class="screen-content"><video controls playsinline preload="none" poster="../assets/projects/unibites/trailer-poster.webp" src="../assets/projects/unibites/trailer.mp4" aria-label="Trailer"></video></div>
+</section>
+    </div>
+  </div>
+</div>
+</article>
+<div class="project-overview" data-detail="stands" data-wall="stands" id="work/stands">
+  <nav class="project-wall" aria-label="Wall exhibits">
+<a class="project-plaque" href="#work/movie-cave" data-route><strong>Movie Cave</strong></a>
+<a class="project-plaque" href="#work/clothing-advice" data-route><strong>Clothing Advice System</strong></a>
+<a class="project-plaque" href="#work/robolux" data-route><strong>RoboLux</strong></a>
+<a class="project-plaque" href="#work/rawaa-othman" data-route><strong>Rawaa Othman</strong></a>
+<a class="project-plaque" href="#work/talaqa" data-route><strong>Talaqa</strong></a>
+  </nav>
+</div>
+<article class="project-focus text-exhibit" data-detail="movie-cave" data-wall="stands" data-exhibit id="work/movie-cave" aria-labelledby="focus-movie-cave">
+  <div class="project-caption">
+    <p class="project-kind">Full-stack web application</p>
+    <h3 id="focus-movie-cave" tabindex="-1">Movie Cave</h3>
+    <p class="project-summary">A web application built with Angular, Spring Boot, and REST APIs.</p>
+    <a class="project-case-link exhibit-wall-back" href="#work/stands" data-route>Back to wall</a>
   </div>
 </article>
-<article class="project-card">
-  
-<figure class="diagram luqata">
-  <div class="motif" aria-hidden="true"><div class="match"><i></i><i></i><i></i></div></div>
-  <figcaption>Concept diagram</figcaption>
-  <ol><li>Report</li><li>Match</li><li>Claim</li></ol>
-</figure>
-  <div class="project-copy">
-    <p class="eyebrow">Team mobile project · King Saud University</p>
-    <h3>Luqata</h3>
-    <p class="project-tagline">A clearer path to recovering lost items</p>
-    <p>A mobile app that connects lost and found reports, using image recognition to suggest possible matches.</p>
-    <ul class="tags"><li lang="en" dir="ltr">Flutter</li><li lang="en" dir="ltr">Image recognition</li></ul>
-    <a class="text-link" href="work/luqata/index.html">Read case study<span class="sr-only"> · Luqata</span></a>
+<article class="project-focus text-exhibit" data-detail="clothing-advice" data-wall="stands" data-exhibit id="work/clothing-advice" aria-labelledby="focus-clothing-advice">
+  <div class="project-caption">
+    <p class="project-kind">Recommender · Machine learning</p>
+    <h3 id="focus-clothing-advice" tabindex="-1">Clothing Advice System</h3>
+    <p class="project-summary">A clothing recommender using Python, scikit-learn, and large language models.</p>
+    <a class="project-case-link exhibit-wall-back" href="#work/stands" data-route>Back to wall</a>
+  </div>
+</article>
+<article class="project-focus text-exhibit" data-detail="robolux" data-wall="stands" data-exhibit id="work/robolux" aria-labelledby="focus-robolux">
+  <div class="project-caption">
+    <p class="project-kind">Robotics team · RoboRumble</p>
+    <h3 id="focus-robolux" tabindex="-1">RoboLux</h3>
+    <p class="project-summary">Our team designed, assembled, and programmed an Arduino robot for RoboRumble. RoboLux took third place.</p>
+    <a class="project-case-link exhibit-wall-back" href="#work/stands" data-route>Back to wall</a>
+  </div>
+</article>
+<article class="project-focus text-exhibit" data-detail="rawaa-othman" data-wall="stands" data-exhibit id="work/rawaa-othman" aria-labelledby="focus-rawaa-othman">
+  <div class="project-caption">
+    <p class="project-kind">Website project · Arees</p>
+    <h3 id="focus-rawaa-othman" tabindex="-1">Rawaa Othman</h3>
+    <p class="project-summary">I helped research requirements, design pages in Figma, and develop the Bir Othman project site in WordPress.</p>
+    <a class="project-case-link exhibit-wall-back" href="#work/stands" data-route>Back to wall</a>
+  </div>
+</article>
+<article class="project-focus text-exhibit" data-detail="talaqa" data-wall="stands" data-exhibit id="work/talaqa" aria-labelledby="focus-talaqa">
+  <div class="project-caption">
+    <p class="project-kind">Prototype · Version 1</p>
+    <h3 id="focus-talaqa" tabindex="-1">Talaqa</h3>
+    <p class="project-summary">I built a first prototype for practicing public speaking through games.</p>
+    <a class="project-case-link exhibit-wall-back" href="#work/stands" data-route>Back to wall</a>
   </div>
 </article>
   </div>
-  <div class="additional"><h3>More work</h3><ul><li><h4>Tamassak</h4><p class="eyebrow">Team game · Unity and C#</p><p>A 3D arcade game about keeping your balance on the Riyadh Metro. The team placed second at the AtharTech bootcamp.</p></li><li><h4>Rehlati</h4><p class="eyebrow">Team UX project · Figma</p><p>A school-trip design for Expo 2030 with pavilion voting, communication, and alerts when a student leaves the group.</p></li><li><h4>UniBites</h4><p class="eyebrow">Team project · Software architecture</p><p>A design for ordering campus meals and collecting them from dynamically assigned smart lockers.</p></li><li><h4>Movie Cave</h4><p class="eyebrow">Full-stack web application</p><p>A web application using Angular, Spring Boot, and REST APIs.</p></li><li><h4>Clothing Advice System</h4><p class="eyebrow">Recommender · Machine learning</p><p>A clothing recommender using Python, scikit-learn, and large language models.</p></li></ul></div>
 </section>
+    <section id="about" class="museum-room" data-room="about" aria-labelledby="about-title">
+      <div class="museum-panel">
+        <p class="museum-kicker">The workbench</p>
+        <h2 id="about-title" class="museum-title" tabindex="-1">How I work</h2>
+        <p class="room-intro">Four phases of software development, each with an example from my work.</p>
+        <nav class="exhibit-choices step-choices" aria-label="Development phases"><a href="#about/1" data-route>Requirements</a><a href="#about/2" data-route>Design</a><a href="#about/3" data-route>Development</a><a href="#about/4" data-route>Testing</a></nav>
+
+<div class="exhibit-detail" data-detail="1" id="about/1">
+  <h3>Requirements</h3>
+  <p>At Arees, I researched the history of Bir Othman, compared site-building tools, and drafted requirements for the Rawaa Othman website.</p>
+  <a class="museum-cta" href="#experience" data-route>See my work at Arees</a>
+</div>
+<div class="exhibit-detail" data-detail="2" id="about/2">
+  <h3>Design</h3>
+  <p>At Arees, I designed Rawaa Othman pages in Figma and iterated on the prototypes.</p>
+  <a class="museum-cta" href="#knowledge/design" data-route>Explore design tools</a>
+</div>
+<div class="exhibit-detail" data-detail="3" id="about/3">
+  <h3>Development</h3>
+  <p>For Majarat Noor, my graduation team used Unity and C# to build an educational game with exploration, challenges, and hints.</p>
+  <a class="museum-cta" href="#work/majarat-noor" data-route>Explore Majarat Noor</a>
+</div>
+<div class="exhibit-detail" data-detail="4" id="about/4">
+  <h3>Testing</h3>
+  <p>At Naseej, I tried updated software releases as part of product evaluations and documented feedback for the team.</p>
+  <a class="museum-cta" href="#experience" data-route>See my work at Naseej</a>
+</div>
+      </div>
+    </section>
+    <section id="knowledge" class="museum-room" data-room="knowledge" aria-labelledby="knowledge-title">
+      <div class="museum-panel">
+        <p class="museum-kicker">The knowledge tree</p>
+        <h2 id="knowledge-title" class="museum-title" tabindex="-1">Knowledge &amp; tools</h2>
+        <p class="room-intro">Focus a branch to see where I put its tools to work.</p>
+        <nav class="exhibit-choices branch-choices" aria-label="Knowledge tree branches"><a href="#knowledge/design" data-route>Design</a><a href="#knowledge/engineering" data-route>Software engineering</a><a href="#knowledge/research" data-route>AI &amp; research</a></nav>
+
+<div class="exhibit-detail" data-detail="design" id="knowledge/design">
+  <h3>Design</h3>
+  <p>I turn requirements into prototypes. At Arees I iterated on designs for the Rawaa Othman website.</p>
+  <ul class="museum-tools"><li lang="en" dir="ltr">Figma</li><li lang="en" dir="ltr">UX</li><li lang="en" dir="ltr">User research</li></ul>
+  <a class="museum-cta" href="#experience" data-route>My work at Arees</a>
+</div>
+<div class="exhibit-detail" data-detail="engineering" id="knowledge/engineering">
+  <h3>Software engineering</h3>
+  <p>I build interactive apps and games. My graduation team used Unity and C# to turn school lessons into playable challenges.</p>
+  <ul class="museum-tools"><li lang="en" dir="ltr">Unity</li><li lang="en" dir="ltr">C#</li><li lang="en" dir="ltr">Flutter</li><li lang="en" dir="ltr">Python</li></ul>
+  <a class="museum-cta" href="#work/majarat-noor" data-route>Explore Majarat Noor</a>
+</div>
+<div class="exhibit-detail" data-detail="research" id="knowledge/research">
+  <h3>AI &amp; research</h3>
+  <p>I’m interested in evaluating systems and using experimental evidence to inform decisions. At Naseej I helped research multilingual OCR systems.</p>
+  <ul class="museum-tools"><li lang="en" dir="ltr">OCR</li><li lang="en" dir="ltr">LLMs</li><li lang="en" dir="ltr">Prompt engineering</li></ul>
+  <a class="museum-cta" href="#experience" data-route>Experience and research</a>
+</div>
+        <details class="museum-drawer"><summary>What I’m learning</summary>
+          <p>I completed courses in agent skills, agentic system design with LangChain, and prompt engineering.</p>
+          <p>I’m exploring retrieval-augmented generation and the Model Context Protocol, and continuing KAUST Academy’s AI program.</p>
+        </details>
+      </div>
+    </section>
+    <section class="museum-room museum-archive" data-room="experience" aria-labelledby="experience-title">
+      <div class="museum-panel">
+        <p class="museum-kicker">The archive</p>
+        <h2 id="experience-title" class="museum-title" tabindex="-1">Experience</h2>
+
 <section id="experience" class="section experience">
   <div class="wrap">
     <div class="section-title"><h2>Experience</h2></div>
@@ -107,59 +325,23 @@
     <div class="recognition"><h3>Education &amp; recognition</h3><ul><li><h4>King Saud University</h4><p>BSc in Software Engineering with honors · 2026</p></li><li><h4>Second place · AtharTech</h4><p>Team Tamassak, Unity game development bootcamp.</p></li><li><h4>Third place · RoboRumble</h4><p>Team RoboLux, a robotics hackathon involving 3D design, circuit assembly, and Arduino programming.</p></li><li><h4>Innovative Solutions for Quality of Life Hackathon</h4><p>I represented Naseej at the Princess Nourah bint Abdulrahman University event.</p><a class="text-link" href="https://pnuhackathon.com/">Event details<span class="sr-only"> · Innovative Solutions for Quality of Life Hackathon</span></a></li><li><h4>KAUST Academy</h4><p>Ongoing participation in the Artificial Intelligence Specialization.</p><a class="text-link" href="https://academy.kaust.edu.sa/programs/ai-specialization/">Program details<span class="sr-only"> · KAUST Academy</span></a></li></ul></div>
   </div>
 </section>
-<section id="about" class="section wrap">
-  <div class="section-title"><h2>How I work</h2><p>Four phases of the software development lifecycle, each with an example from my work.</p></div>
-  <div class="process">
-    <div class="process-art dark">
-      <img src="../assets/hero-desktop-960.webp" width="960" height="540" loading="lazy" alt="">
-      <nav class="phase-map" aria-label="Development phase map"><div class="map-plane"><a href="#phase-1" data-phase="0" aria-label="Requirements">01</a><a href="#phase-2" data-phase="1" aria-label="Design">02</a><a href="#phase-3" data-phase="2" aria-label="Development">03</a><a href="#phase-4" data-phase="3" aria-label="Testing">04</a></div></nav>
-    </div>
-    <ol class="phases">
-<li class="phase" id="phase-1">
-  <span class="phase-index" aria-hidden="true">01</span>
-  <div><h3>Requirements</h3><p>At Arees, I researched the history of Bir Othman, compared site-building tools, and drafted requirements for the Rawaa Othman website.</p></div>
-</li>
-<li class="phase" id="phase-2">
-  <span class="phase-index" aria-hidden="true">02</span>
-  <div><h3>Design</h3><p>At Arees, I designed Rawaa Othman pages in Figma and iterated on the prototypes.</p></div>
-</li>
-<li class="phase" id="phase-3">
-  <span class="phase-index" aria-hidden="true">03</span>
-  <div><h3>Development</h3><p>For Majarat Noor, my graduation team used Unity and C# to build an educational game with exploration, challenges, and hints.</p></div>
-</li>
-<li class="phase" id="phase-4">
-  <span class="phase-index" aria-hidden="true">04</span>
-  <div><h3>Testing</h3><p>At Naseej, I tried updated software releases as part of product evaluations and documented feedback for the team.</p></div>
-</li></ol>
-  </div>
-  <div class="about-grid">
-    <article><h3>Beyond tech</h3>
-      <p>I enjoy games, 3D design, and robotics. In quieter moments I read novels, write stories, and enjoy working through Arabic grammar.</p>
-    </article>
-    <article><h3>What I’m learning</h3>
-      <p>I completed courses in agent skills, agentic system design with LangChain, and prompt engineering.</p>
-      <p>I’m exploring retrieval-augmented generation (RAG) and the Model Context Protocol (MCP), and continuing KAUST Academy’s AI program.</p>
-    </article>
-    <article><h3>Tools I use</h3>
-      <p>I use Figma for design, Flutter and Unity for development, and Python and Neo4j for AI and data work.</p>
-    </article>
-  </div>
-</section></main>
-
-<footer class="contact dark" id="contact">
-  <div class="wrap contact-inner">
-    <div>
-      <p class="eyebrow">Contact</p>
-      <h2>Let’s build something.</h2>
-      <p>For roles and collaborations, reach out on LinkedIn.</p>
-      <div class="contact-links">
-        <a class="button" href="https://www.linkedin.com/in/khaditheeng/" lang="en" dir="ltr">LinkedIn</a>
-        <a class="button outline" href="https://github.com/codeNinjaess" lang="en" dir="ltr">GitHub</a>
       </div>
-    </div>
-    <a class="footer-logo" href="index.html"><img src="../assets/logo-cream-300.webp" alt="Khadija Al-Ansari" width="300" height="111"></a>
-  </div>
-  <div class="wrap footer-line"><span>Khadija Al-Ansari</span><span>Riyadh, Saudi Arabia</span></div>
-</footer>
+    </section>
+    <section id="contact" class="museum-room" data-room="contact" aria-labelledby="contact-title">
+      <div class="museum-panel">
+        <p class="museum-kicker">Contact · Riyadh</p>
+        <h2 id="contact-title" class="museum-title" tabindex="-1">Let’s build something.</h2>
+        <p class="room-intro">For professional opportunities and collaborations, reach out on LinkedIn.</p>
+        <div class="museum-contact">
+          <a class="museum-cta" href="https://www.linkedin.com/in/khaditheeng/" lang="en" dir="ltr">LinkedIn</a>
+          <a class="museum-cta" href="https://github.com/codeNinjaess" lang="en" dir="ltr">GitHub</a>
+        </div>
+        <details class="museum-drawer"><summary>Beyond tech</summary>
+          <p>I enjoy games, 3D design, and robotics. In quieter moments, I read novels, write stories, and enjoy working through Arabic grammar.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+</div>
 </body>
 </html>

@@ -1,0 +1,11 @@
+{
+  "name": "khadija-portfolio-museum",
+  "private": true,
+  "scripts": {
+    "build:scene": "esbuild ./src/museum-scene.js --bundle --minify --format=iife --target=es2022 --outfile=dist/assets/museum-scene.js"
+  },
+  "devDependencies": {
+    "esbuild": "0.27.3",
+    "three": "0.183.2"
+  }
+}
